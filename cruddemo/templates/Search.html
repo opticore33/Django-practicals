@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search user</title>
+</head>
+<body>
+    <form method="GET">
+        Search user<input type="search" placeholder="Search by name" name="search">
+        <button type="submit">Search</button>
+
+        <div>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td colspan="3">{{error}}</td>
+                </tr>
+                {% for i in user_info %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.email }}</td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+
+
+
+    </form>
+</body>
+</html>
