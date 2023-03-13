@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Show</title>
+</head>
+<body>
+    {% if data == '' %}
+        <p>No data found</p>
+    {% else %}
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>email</th>
+                <th>Profile Picture</th>
+            </tr>
+            {% for obj in data %}
+            <tr>
+                <td>{{obj.id}}</td>
+                <td>{{obj.name}}</td>
+                <td>{{obj.email}}</td>
+                <td ><img src="/media/{{obj.profile_pic}}" style="height: 100px;width: 150px;"></td>
+            </tr>
+     
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>
